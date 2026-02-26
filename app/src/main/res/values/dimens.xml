@@ -14,4 +14,5 @@
     <dimen name="_64dp">64dp</dimen>
     <dimen name="_0dp">0dp</dimen>
     <dimen name="_76dp">76dp</dimen>
+    <dimen name="_60sp">60sp</dimen>
 </resources>

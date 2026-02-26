@@ -9,11 +9,11 @@
 
     <Button
         android:id="@+id/mainMenuButton"
-        android:layout_width="220dp"
+        android:layout_width="@dimen/_220dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="100dp"
+        android:layout_marginStart="@dimen/_100dp"
         android:layout_marginTop="@dimen/_40dp"
-        android:backgroundTint="#FF5788"
+        android:backgroundTint="@color/Pink"
         android:text="@string/mainmenu"
         android:textSize="@dimen/_22sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -21,7 +21,7 @@
 
     <Button
         android:id="@+id/cameraButton"
-        android:layout_width="220dp"
+        android:layout_width="@dimen/_220dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/_100dp"
         android:layout_marginTop="@dimen/_40dp"
@@ -33,11 +33,11 @@
     <Button
         android:id="@+id/openCalc"
         android:layout_height="wrap_content"
-        android:layout_width="220dp"
+        android:layout_width="@dimen/_220dp"
         android:layout_marginStart="@dimen/_100dp"
         android:layout_marginTop="@dimen/_40dp"
         android:text="@string/calculator"
-        android:backgroundTint="#4CAF50"
+        android:backgroundTint="@color/Green"
         android:textSize="@dimen/_22sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cameraButton"
