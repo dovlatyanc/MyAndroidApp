@@ -15,4 +15,16 @@
     <dimen name="_0dp">0dp</dimen>
     <dimen name="_76dp">76dp</dimen>
     <dimen name="_60sp">60sp</dimen>
+
+
+    <dimen name="padding_small">8dp</dimen>
+    <dimen name="padding_normal">16dp</dimen>
+    <dimen name="padding_large">24dp</dimen>
+
+    <dimen name="text_size_title">20sp</dimen>
+    <dimen name="text_size_body">16sp</dimen>
+    <dimen name="text_size_price">18sp</dimen>
+
+    <dimen name="image_height">120dp</dimen>
+    <dimen name="corner_radius">8dp</dimen>
 </resources>
