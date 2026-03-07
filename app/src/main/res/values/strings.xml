@@ -33,4 +33,13 @@
     <string name="currency_symbol">₽</string>
     <string name="cars">Cars</string>
     <string name="cars_list">Cars List</string>
+
+    <string name="weather_title">Прогноз погоды</string>
+    <string name="weather_detail_title">Детали погоды</string>
+    <string name="weather_icon">Иконка погоды</string>
+    <string name="loading">Загрузка</string>
+    <string name="error_weather">Не удалось загрузить прогноз</string>
+    <string name="weather">Погода</string>
+
+
 </resources>

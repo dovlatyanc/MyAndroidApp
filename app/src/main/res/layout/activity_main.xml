@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".presentation.main.MainActivity">
 
     <Button
         android:id="@+id/mainMenuButton"
@@ -57,4 +57,15 @@
         app:layout_constraintTop_toBottomOf="@+id/openCalc"
 
         />
+    <Button
+        android:id="@+id/btnWeather"
+        android:layout_width="@dimen/_220dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_100dp"
+        android:layout_marginTop="@dimen/_40dp"
+        android:backgroundTint="@color/blue"
+        android:text="@string/weather"
+        android:textSize="@dimen/_22sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnCarsList" />
 </androidx.constraintlayout.widget.ConstraintLayout>

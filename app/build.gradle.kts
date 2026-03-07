@@ -1,11 +1,14 @@
 plugins {
     alias(libs.plugins.android.application)
+
 }
 
 android {
 
+
     buildFeatures {
         viewBinding = true
+        buildConfig = true
     }
     namespace = "com.example.myapp"
     compileSdk {
@@ -25,8 +28,17 @@ android {
     }
 
     buildTypes {
+
+
+        val apiKey = project.findProperty("WEATHER_API_KEY") as? String ?: ""
+
+        debug {
+
+            buildConfigField("String", "WEATHER_API_KEY", "\"$apiKey\"")
+        }
         release {
-            isMinifyEnabled = false
+            buildConfigField("String", "WEATHER_API_KEY", "\"$apiKey\"")
+            isMinifyEnabled = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
@@ -39,8 +51,17 @@ android {
     }
 }
 
+
+
 dependencies {
 
+
+    implementation(libs.glide)
+    annotationProcessor(libs.compiler)
+    implementation(libs.androidx.lifecycle.lifecycle.viewmodel.ktx)
+    implementation(libs.androidx.lifecycle.lifecycle.livedata.ktx)
+    implementation(libs.androidx.activity.activity.ktx3)
+    implementation(libs.kotlinx.coroutines.android)
     implementation(libs.retrofit)
     implementation(libs.converter.gson)
     implementation(libs.logging.interceptor)

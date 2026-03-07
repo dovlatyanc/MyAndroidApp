@@ -1,11 +1,11 @@
-package com.example.myapp
+package com.example.myapp.presentation.car
 
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myapp.databinding.ItemCarBinding
-import com.example.myapp.model.Car
+import com.example.myapp.domain.model.Car
 
 class CarAdapter(
     private val cars: List<Car>

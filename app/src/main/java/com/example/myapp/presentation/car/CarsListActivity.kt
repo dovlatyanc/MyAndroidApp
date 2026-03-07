@@ -1,10 +1,11 @@
-package com.example.myapp
+package com.example.myapp.presentation.car
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.myapp.R
 import com.example.myapp.databinding.ActivityCarsListBinding
-import com.example.myapp.model.Car
+import com.example.myapp.domain.model.Car
 
 class CarsListActivity : AppCompatActivity() {
 
@@ -13,7 +14,6 @@ class CarsListActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        // ViewBinding
         binding = ActivityCarsListBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
