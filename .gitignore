@@ -46,7 +46,7 @@ Desktop.ini
 *.avd
 *.ini
 
-
+myapp/example/com/SuperSecretFile.kt
 fastlane/report.xml
 fastlane/Preview.html
 fastlane/screenshots/**/*.png

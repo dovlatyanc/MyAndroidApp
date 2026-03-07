@@ -1,4 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">MyApp</string>
     <string name="myName">Георгий</string>
+    <string name="mainmenu">MainMenu</string>
+    <string name="camera">Camera</string>
+    <string name="cars">Cars</string>
+    <string name="cars_list">Cars List</string>
+    <string name="screen_main">Главная</string>
+    <string name="screen_details">Детали авто</string>
+
+    <string name="calculator">Calculator</string>
+    <string name="calculator_title">Калькулятор</string>
+    <string name="ac">AC</string>
+    <string name="Percent">%</string>
+    <string name="Zero">0</string>
+    <string name="Backspace"><![CDATA[⌫]]></string>
+    <string name="divide">/</string>
+    <string name="seven">7</string>
+    <string name="eight">8</string>
+    <string name="nine">9</string>
+    <string name="multiply">×</string>
+    <string name="four">4</string>
+    <string name="five">5</string>
+    <string name="six">6</string>
+    <string name="minus">−</string>
+    <string name="one">1</string>
+    <string name="two">2</string>
+    <string name="three">3</string>
+    <string name="plus">+</string>
+    <string name="equals">=</string>
+    <string name="dot">.</string>
+    <string name="error_invalid_expression">Неверное выражение</string>
+    <string name="error_calculation">Ошибка вычисления</string>
+
+
+    <string name="weather">Погода</string>
+    <string name="weather_title">Прогноз погоды</string>
+    <string name="weather_detail_title">Детали погоды</string>
+    <string name="weather_icon">Иконка погоды</string>
+    <string name="loading">Загрузка</string>
+    <string name="error_weather">Не удалось загрузить прогноз</string>
+    <string name="enter_city">Введите город</string>
+    <string name="search">Поиск</string>
+    <string name="temperature">Температура</string>
+    <string name="humidity">Влажность</string>
+    <string name="wind_speed">Скорость ветра</string>
+    <string name="feels_like">Ощущается как</string>
+    <string name="humidity_format">Влажность: %d%%</string>
+    <string name="wind_format">Ветер: %.1f м/с</string>
+    <string name="city_hint">Введите название города</string>
+    <string name="refresh">Обновить</string>
+
+
+    <string name="label_brand">Марка:</string>
+    <string name="label_model">Модель:</string>
+    <string name="label_year">Год:</string>
+    <string name="label_price">Цена:</string>
+    <string name="label_description">Описание:</string>
+    <string name="currency_symbol">₽</string>
+
+    <string name="error_network">Ошибка сети</string>
+    <string name="error_server">Ошибка сервера</string>
+    <string name="error_unknown">Неизвестная ошибка</string>
+    <string name="error_no_internet">Нет подключения к интернету</string>
+    <string name="error_city_not_found">Город не найден</string>
+
+
+    <string name="button_retry">Повторить</string>
+    <string name="button_cancel">Отмена</string>
+    <string name="button_ok">OK</string>
+    <string name="button_back">Назад</string>
+
+    <string name="unit_celsius">°C</string>
+    <string name="unit_percent">%%</string>
+    <string name="unit_meter_per_second">м/с</string>
+
+
+    <string name="weather_clear">Ясно</string>
+    <string name="weather_clouds">Облачно</string>
+    <string name="weather_rain">Дождь</string>
+    <string name="weather_snow">Снег</string>
+    <string name="weather_thunderstorm">Гроза</string>
+    <string name="weather_mist">Туман</string>
+    <string name="reverse">+|-</string>
+
+
 </resources>
