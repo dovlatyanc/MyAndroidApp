@@ -1,4 +1,45 @@
 <resources>
     <string name="app_name">MyApp</string>
     <string name="myName">Георгий</string>
+    <string name="mainmenu">MainMenu</string>
+    <string name="camera">Camera</string>
+    <string name="ac">AC</string>
+    <string name="Percent">%</string>
+    <string name="Zero">0</string>
+    <string name="Backspace"><![CDATA[<=]]></string>
+    <string name="divide">/</string>
+    <string name="seven">7</string>
+    <string name="eight">8</string>
+    <string name="nine">9</string>
+    <string name="multiply">X</string>
+    <string name="six">6</string>
+    <string name="five">5</string>
+    <string name="four">4</string>
+    <string name="plus">+</string>
+    <string name="one">1</string>
+    <string name="two">2</string>
+    <string name="three">3</string>
+    <string name="equals">=</string>
+    <string name="calculator">Calculator</string>
+
+    <string name="screen_main">Главная</string>
+    <string name="screen_details">Детали авто</string>
+
+    <string name="label_brand">Марка:</string>
+    <string name="label_model">Модель:</string>
+    <string name="label_year">Год:</string>
+    <string name="label_price">Цена:</string>
+    <string name="label_description">Описание:</string>
+    <string name="currency_symbol">₽</string>
+    <string name="cars">Cars</string>
+    <string name="cars_list">Cars List</string>
+
+    <string name="weather_title">Прогноз погоды</string>
+    <string name="weather_detail_title">Детали погоды</string>
+    <string name="weather_icon">Иконка погоды</string>
+    <string name="loading">Загрузка</string>
+    <string name="error_weather">Не удалось загрузить прогноз</string>
+    <string name="weather">Погода</string>
+
+
 </resources>

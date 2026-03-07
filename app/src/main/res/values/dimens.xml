@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="_22sp">22sp</dimen>
+    <dimen name="_40dp">40dp</dimen>
+    <dimen name="_32dp">32dp</dimen>
+    <dimen name="_100dp">100dp</dimen>
+    <dimen name="_90dp">90dp</dimen>
+    <dimen name="_80dp">80dp</dimen>
+    <dimen name="_4dp">4dp</dimen>
+    <dimen name="_8dp">8dp</dimen>
+    <dimen name="_20sp">20sp</dimen>
+    <dimen name="_150dp">150dp</dimen>
+    <dimen name="_20dp">20dp</dimen>
+    <dimen name="_220dp">220dp</dimen>
+    <dimen name="_64dp">64dp</dimen>
+    <dimen name="_0dp">0dp</dimen>
+    <dimen name="_76dp">76dp</dimen>
+    <dimen name="_60sp">60sp</dimen>
+
+
+    <dimen name="text_size_extra_large">48sp</dimen>
+
+    <dimen name="weather_icon_size">48dp</dimen>
+    <dimen name="text_size_small">12sp</dimen>
+
+    <dimen name="padding_small">8dp</dimen>
+    <dimen name="padding_normal">16dp</dimen>
+    <dimen name="padding_large">24dp</dimen>
+
+    <dimen name="text_size_title">20sp</dimen>
+    <dimen name="text_size_body">16sp</dimen>
+    <dimen name="text_size_price">18sp</dimen>
+
+    <dimen name="image_height">120dp</dimen>
+    <dimen name="corner_radius">8dp</dimen>
+</resources>
