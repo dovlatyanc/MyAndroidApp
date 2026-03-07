@@ -15,7 +15,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApp">
         <activity
-            android:name=".presentation.main.MainActivity"
+            android:name=".presentation.main.ui.MainActivity"
             android:exported="true">
 
             <intent-filter>
@@ -26,21 +26,21 @@
         </activity>
 
         <activity
-            android:name=".presentation.calculator.CalculatorActivity"
+            android:name=".presentation.calculator.ui.CalculatorActivity"
             android:exported="false"
-            android:parentActivityName=".presentation.main.MainActivity" />
+            android:parentActivityName=".presentation.main.ui.MainActivity" />
         <activity
             android:name=".presentation.car.CarsListActivity"
             android:exported="false" />
         <activity
-            android:name=".presentation.weather.WeatherActivity"
+            android:name=".presentation.weather.ui.WeatherActivity"
             android:exported="false"
-            android:parentActivityName=".presentation.main.MainActivity" />
+            android:parentActivityName=".presentation.main.ui.MainActivity" />
 
         <activity
-            android:name=".presentation.weather.weatherdetail.WeatherDetailActivity"
+            android:name=".presentation.weather.ui.WeatherDetailActivity"
             android:exported="false"
-            android:parentActivityName=".presentation.weather.WeatherActivity" />
+            android:parentActivityName=".presentation.weather.ui.WeatherActivity" />
 
 
     </application>

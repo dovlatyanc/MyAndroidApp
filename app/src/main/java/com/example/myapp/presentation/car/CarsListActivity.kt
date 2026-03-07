@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.myapp.R
 import com.example.myapp.databinding.ActivityCarsListBinding
-import com.example.myapp.domain.model.Car
+import com.example.myapp.domain.weather.model.Car
 
 class CarsListActivity : AppCompatActivity() {
 

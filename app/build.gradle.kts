@@ -56,6 +56,7 @@ android {
 dependencies {
 
 
+    implementation(libs.exp4j)
     implementation(libs.glide)
     annotationProcessor(libs.compiler)
     implementation(libs.androidx.lifecycle.lifecycle.viewmodel.ktx)

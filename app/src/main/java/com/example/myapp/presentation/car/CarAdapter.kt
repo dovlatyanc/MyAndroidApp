@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myapp.databinding.ItemCarBinding
-import com.example.myapp.domain.model.Car
+import com.example.myapp.domain.weather.model.Car
 
 class CarAdapter(
     private val cars: List<Car>
