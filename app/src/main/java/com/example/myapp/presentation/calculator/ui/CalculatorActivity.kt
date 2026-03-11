@@ -3,71 +3,75 @@ package com.example.myapp.presentation.calculator.ui
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.ViewModelProvider
+import com.example.myapp.R
 import com.example.myapp.databinding.ActivityCalculatorBinding
-import com.example.myapp.data.calculator.repository.CalculatorRepositoryImpl
-import com.example.myapp.data.calculator.service.ExpressionCalculator
-import com.example.myapp.domain.calculator.usecase.CalculateExpressionUseCase
-import com.example.myapp.domain.calculator.usecase.ValidateExpressionUseCase
 import com.example.myapp.presentation.calculator.viewmodel.CalculatorViewModel
-import com.example.myapp.presentation.calculator.viewmodel.CalculatorViewModelFactory
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class CalculatorActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityCalculatorBinding
-    private lateinit var viewModel: CalculatorViewModel
+
+    private val viewModel: CalculatorViewModel by viewModel()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityCalculatorBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        setupViewModel()
+        setupToolbar()
         setupObservers()
         setupClickListeners()
     }
 
+    private fun setupToolbar() {
+        setSupportActionBar(binding.toolbar)
+        supportActionBar?.apply {
+            setDisplayHomeAsUpEnabled(true)
+            setDisplayShowHomeEnabled(true)
+            title = getString(R.string.calculator)
+        }
+    }
 
-    private fun setupViewModel() {
-        val calculator = ExpressionCalculator()
-        val repository = CalculatorRepositoryImpl(calculator)
-        val calculateUseCase = CalculateExpressionUseCase(repository)
-        val validateUseCase = ValidateExpressionUseCase(repository)
-
-        viewModel = ViewModelProvider(
-            this,
-            CalculatorViewModelFactory(calculateUseCase, validateUseCase)
-        )[CalculatorViewModel::class.java]
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressedDispatcher.onBackPressed()
+        return true
     }
 
     private fun setupObservers() {
         viewModel.state.observe(this) { state ->
             binding.calcResult.text = state.expression.ifEmpty {
-                state.result
+                state.result ?: ""
             }
 
             if (state.isError) {
-                Toast.makeText(this, state.errorMessage ?: "Error", Toast.LENGTH_SHORT).show()
+                Toast.makeText(
+                    this,
+                    state.errorMessage ?: "Ошибка вычисления",
+                    Toast.LENGTH_SHORT
+                ).show()
+                viewModel.onErrorShown()
             }
         }
     }
 
     private fun setupClickListeners() {
-        binding.btnZero.setOnClickListener { viewModel.onNumberClick("0") }
-        binding.btnOne.setOnClickListener { viewModel.onNumberClick("1") }
-        binding.btnTwo.setOnClickListener { viewModel.onNumberClick("2") }
-        binding.btnThree.setOnClickListener { viewModel.onNumberClick("3") }
-        binding.btnFour.setOnClickListener { viewModel.onNumberClick("4") }
-        binding.btnFive.setOnClickListener { viewModel.onNumberClick("5") }
-        binding.btnSix.setOnClickListener { viewModel.onNumberClick("6") }
-        binding.btnSeven.setOnClickListener { viewModel.onNumberClick("7") }
-        binding.btnEight.setOnClickListener { viewModel.onNumberClick("8") }
-        binding.btnNine.setOnClickListener { viewModel.onNumberClick("9") }
 
-        binding.btnPlus.setOnClickListener { viewModel.onOperatorClick("+") }
-        binding.btnMinus.setOnClickListener { viewModel.onOperatorClick("-") }
-        binding.btnMulty.setOnClickListener { viewModel.onOperatorClick("*") }
-        binding.btnDivide.setOnClickListener { viewModel.onOperatorClick("/") }
+        binding.btnZero.setOnClickListener { viewModel.onNumberClick(NUMBER_ZERO) }
+        binding.btnOne.setOnClickListener { viewModel.onNumberClick(NUMBER_ONE) }
+        binding.btnTwo.setOnClickListener { viewModel.onNumberClick(NUMBER_TWO) }
+        binding.btnThree.setOnClickListener { viewModel.onNumberClick(NUMBER_THREE) }
+        binding.btnFour.setOnClickListener { viewModel.onNumberClick(NUMBER_FOUR) }
+        binding.btnFive.setOnClickListener { viewModel.onNumberClick(NUMBER_FIVE) }
+        binding.btnSix.setOnClickListener { viewModel.onNumberClick(NUMBER_SIX) }
+        binding.btnSeven.setOnClickListener { viewModel.onNumberClick(NUMBER_SEVEN) }
+        binding.btnEight.setOnClickListener { viewModel.onNumberClick(NUMBER_EIGHT) }
+        binding.btnNine.setOnClickListener { viewModel.onNumberClick(NUMBER_NINE) }
+
+        binding.btnPlus.setOnClickListener { viewModel.onOperatorClick(OPERATOR_PLUS) }
+        binding.btnMinus.setOnClickListener { viewModel.onOperatorClick(OPERATOR_MINUS) }
+        binding.btnMulty.setOnClickListener { viewModel.onOperatorClick(OPERATOR_MULTIPLY) }
+        binding.btnDivide.setOnClickListener { viewModel.onOperatorClick(OPERATOR_DIVIDE) }
 
         binding.btnReverse.setOnClickListener { viewModel.onReverseClick() }
         binding.btnPercent.setOnClickListener { viewModel.onPercentClick() }
@@ -78,11 +82,21 @@ class CalculatorActivity : AppCompatActivity() {
         binding.btnEquals.setOnClickListener { viewModel.onEqualsClick() }
     }
 
-    override fun onOptionsItemSelected(item: android.view.MenuItem): Boolean {
-        if (item.itemId == android.R.id.home) {
-            finish()
-            return true
-        }
-        return super.onOptionsItemSelected(item)
+    companion object {
+        private const val NUMBER_ZERO = "0"
+        private const val NUMBER_ONE = "1"
+        private const val NUMBER_TWO = "2"
+        private const val NUMBER_THREE = "3"
+        private const val NUMBER_FOUR = "4"
+        private const val NUMBER_FIVE = "5"
+        private const val NUMBER_SIX = "6"
+        private const val NUMBER_SEVEN = "7"
+        private const val NUMBER_EIGHT = "8"
+        private const val NUMBER_NINE = "9"
+
+        private const val OPERATOR_PLUS = "+"
+        private const val OPERATOR_MINUS = "-"
+        private const val OPERATOR_MULTIPLY = "*"
+        private const val OPERATOR_DIVIDE = "/"
     }
 }

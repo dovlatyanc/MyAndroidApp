@@ -8,6 +8,7 @@ import com.example.myapp.domain.weather.usecase.GetWeatherForecastUseCase
 import com.example.myapp.presentation.weather.state.WeatherUiState
 import kotlinx.coroutines.launch
 
+
 class WeatherViewModel(
     private val getWeatherForecastUseCase: GetWeatherForecastUseCase
 ) : ViewModel() {

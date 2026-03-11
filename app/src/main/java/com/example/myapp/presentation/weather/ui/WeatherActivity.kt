@@ -7,17 +7,17 @@ import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.myapp.data.repository.WeatherRepositoryImpl
-import com.example.myapp.data.weather.remote.WeatherRemoteDataSource
 import com.example.myapp.databinding.ActivityWeatherBinding
-import com.example.myapp.domain.weather.usecase.GetWeatherForecastUseCase
 import com.example.myapp.presentation.weather.state.WeatherUiState
 import com.example.myapp.presentation.weather.viewmodel.WeatherViewModel
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class WeatherActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityWeatherBinding
-    private lateinit var weatherViewModel: WeatherViewModel
+
+    private val weatherViewModel: WeatherViewModel by viewModel()
+
     private lateinit var weatherAdapter: WeatherForecastAdapter
 
     @SuppressLint("SetTextI18n")
@@ -27,11 +27,13 @@ class WeatherActivity : AppCompatActivity() {
         binding = ActivityWeatherBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+
         setSupportActionBar(binding.toolbar)
         supportActionBar?.apply {
             setDisplayHomeAsUpEnabled(true)
             setDisplayShowHomeEnabled(true)
         }
+
 
         weatherAdapter = WeatherForecastAdapter(
             onItemClick = { forecast ->
@@ -40,13 +42,10 @@ class WeatherActivity : AppCompatActivity() {
                 startActivity(intent)
             }
         )
+
         binding.recyclerViewWeather.layoutManager = LinearLayoutManager(this)
         binding.recyclerViewWeather.adapter = weatherAdapter
 
-
-        val repository = WeatherRepositoryImpl(WeatherRemoteDataSource())
-        val useCase = GetWeatherForecastUseCase(repository)
-        weatherViewModel = WeatherViewModel(useCase)
 
         weatherViewModel.uiState.observe(this) { state ->
             when (state) {
@@ -67,11 +66,15 @@ class WeatherActivity : AppCompatActivity() {
                 is WeatherUiState.Error -> {
                     binding.progressBar.visibility = View.GONE
                     binding.recyclerViewWeather.visibility = View.GONE
-                    Toast.makeText(this,
-                        "Ошибка: ${state.message}", Toast.LENGTH_LONG).show()
+                    Toast.makeText(
+                        this,
+                        "Ошибка: ${state.message}",
+                        Toast.LENGTH_LONG
+                    ).show()
                 }
             }
         }
+
 
         weatherViewModel.loadWeather("Moscow")
     }

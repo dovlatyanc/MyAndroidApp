@@ -6,6 +6,7 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
+        android:name=".core.MyApp"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -29,9 +30,6 @@
             android:name=".presentation.calculator.ui.CalculatorActivity"
             android:exported="false"
             android:parentActivityName=".presentation.main.ui.MainActivity" />
-        <activity
-            android:name=".presentation.car.CarsListActivity"
-            android:exported="false" />
         <activity
             android:name=".presentation.weather.ui.WeatherActivity"
             android:exported="false"

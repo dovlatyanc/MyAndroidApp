@@ -1,8 +1,14 @@
 package com.example.myapp.domain.calculator.model
 
-data class CalculationResult(
-    val expression: String,
-    val result: Double,
-    val isError: Boolean = false,
-    val errorMessage: String? = null
-)
+sealed class CalculationResult {
+
+    data class Success(
+        val expression: String,
+        val value: Double
+    ) : CalculationResult()
+
+    data class Error(
+        val expression: String,
+        val message: String
+    ) : CalculationResult()
+}

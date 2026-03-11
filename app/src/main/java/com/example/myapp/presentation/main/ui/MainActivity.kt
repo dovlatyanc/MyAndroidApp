@@ -5,7 +5,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.myapp.databinding.ActivityMainBinding
 import com.example.myapp.presentation.calculator.ui.CalculatorActivity
-import com.example.myapp.presentation.car.CarsListActivity
+
 import com.example.myapp.presentation.weather.ui.WeatherActivity
 
 class MainActivity : AppCompatActivity() {
@@ -26,8 +26,5 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(this, CalculatorActivity::class.java))
         }
 
-        binding.btnCarsList.setOnClickListener {
-            startActivity(Intent(this, CarsListActivity::class.java))
-        }
     }
 }

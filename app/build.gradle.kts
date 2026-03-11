@@ -56,6 +56,8 @@ android {
 dependencies {
 
 
+
+    implementation(libs.koin.android)
     implementation(libs.exp4j)
     implementation(libs.glide)
     annotationProcessor(libs.compiler)
