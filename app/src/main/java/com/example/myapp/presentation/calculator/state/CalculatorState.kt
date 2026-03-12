@@ -1,8 +1,11 @@
 package com.example.myapp.presentation.calculator.state
 
+import com.example.myapp.domain.calculator.model.CalculationErrorCode
+
 data class CalculatorState(
     val expression: String = "",
-    val result: String? = null,
+    val result: String = "",
     val isError: Boolean = false,
-    val errorMessage: String? = null
+    val errorCode: CalculationErrorCode? = null,
+    val errorExpression: String = ""
 )

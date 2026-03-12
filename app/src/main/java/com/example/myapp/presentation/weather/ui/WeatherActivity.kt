@@ -5,8 +5,10 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
+import android.widget.Toast.makeText
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.myapp.R
 import com.example.myapp.databinding.ActivityWeatherBinding
 import com.example.myapp.presentation.weather.state.WeatherUiState
 import com.example.myapp.presentation.weather.viewmodel.WeatherViewModel
@@ -66,11 +68,9 @@ class WeatherActivity : AppCompatActivity() {
                 is WeatherUiState.Error -> {
                     binding.progressBar.visibility = View.GONE
                     binding.recyclerViewWeather.visibility = View.GONE
-                    Toast.makeText(
-                        this,
-                        "Ошибка: ${state.message}",
-                        Toast.LENGTH_LONG
-                    ).show()
+
+                    val errorMessage = getString(R.string.err_weather_ui, state.message)
+                    Toast.makeText(this, errorMessage, Toast.LENGTH_LONG).show()
                 }
             }
         }

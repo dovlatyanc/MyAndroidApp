@@ -27,7 +27,8 @@ class CalculatorViewModel(
         _state.value = _state.value?.copy(
             expression = currentExpression + number,
             isError = false,
-            errorMessage = null
+            errorCode = null,
+            errorExpression = ""
         )
     }
 
@@ -43,13 +44,15 @@ class CalculatorViewModel(
             _state.value = _state.value?.copy(
                 expression = cleanExpression + operator,
                 isError = false,
-                errorMessage = null
+                errorCode = null,
+                errorExpression = ""
             )
         } else if (currentExpression.isEmpty() && operator == "-") {
             _state.value = _state.value?.copy(
                 expression = operator,
                 isError = false,
-                errorMessage = null
+                errorCode = null,
+                errorExpression = ""
             )
         }
     }
@@ -65,7 +68,8 @@ class CalculatorViewModel(
                 _state.value = _state.value?.copy(
                     expression = newExpression,
                     isError = false,
-                    errorMessage = null
+                    errorCode = null,
+                    errorExpression = ""
                 )
             }
         } else if (lastResult != null) {
@@ -73,7 +77,8 @@ class CalculatorViewModel(
             _state.value = _state.value?.copy(
                 result = formatResult(lastResult!!),
                 isError = false,
-                errorMessage = null
+                errorCode = null,
+                errorExpression = ""
             )
         }
     }
@@ -89,7 +94,8 @@ class CalculatorViewModel(
             _state.value = _state.value?.copy(
                 expression = currentExpression.dropLast(1),
                 isError = false,
-                errorMessage = null
+                errorCode = null,
+                errorExpression = ""
             )
         }
     }
@@ -111,13 +117,15 @@ class CalculatorViewModel(
                             expression = "",
                             result = formatResult(calculationResult.value),
                             isError = false,
-                            errorMessage = null
+                            errorCode = null,
+                            errorExpression = ""
                         )
                     }
                     is CalculationResult.Error -> {
                         _state.value = _state.value?.copy(
                             isError = true,
-                            errorMessage = calculationResult.message
+                            errorCode = calculationResult.errorCode,
+                            errorExpression = calculationResult.expression
                         )
                     }
                 }
@@ -132,7 +140,8 @@ class CalculatorViewModel(
     fun onErrorShown() {
         _state.value = _state.value?.copy(
             isError = false,
-            errorMessage = null
+            errorCode = null,
+            errorExpression = ""
         )
     }
 
@@ -143,7 +152,8 @@ class CalculatorViewModel(
             _state.value = _state.value?.copy(
                 expression = currentExpression + "0.",
                 isError = false,
-                errorMessage = null
+                errorCode = null,
+                errorExpression = ""
             )
         } else if (!currentExpression.contains(".") || hasDecimalInLastNumber(currentExpression)) {
             return
@@ -151,7 +161,8 @@ class CalculatorViewModel(
             _state.value = _state.value?.copy(
                 expression = "$currentExpression.",
                 isError = false,
-                errorMessage = null
+                errorCode = null,
+                errorExpression = ""
             )
         }
     }
@@ -163,7 +174,8 @@ class CalculatorViewModel(
             _state.value = _state.value?.copy(
                 expression = "$currentExpression%",
                 isError = false,
-                errorMessage = null
+                errorCode = null,
+                errorExpression = ""
             )
         }
     }

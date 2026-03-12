@@ -2,7 +2,6 @@ package com.example.myapp.core
 
 import android.app.Application
 import com.example.myapp.core.di.calculator.calculatorDataModule
-import com.example.myapp.core.di.calculator.calculatorDomainModule
 import com.example.myapp.core.di.calculator.calculatorPresentationModule
 import com.example.myapp.core.di.weather.dataModule
 import com.example.myapp.core.di.weather.domainModule
@@ -28,7 +27,6 @@ class MyApp : Application() {
                 domainModule,
                 weatherPresentationModule,
                 calculatorDataModule,
-                calculatorDomainModule,
                 calculatorPresentationModule,
 
             )

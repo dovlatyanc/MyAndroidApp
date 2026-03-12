@@ -84,5 +84,11 @@
     <string name="weather_mist">Туман</string>
     <string name="reverse">+|-</string>
 
+    <string name="err_weather_ui">Ошибка: %1$s</string>
+
+    <!-- Ошибки калькулятора -->
+    <string name="error_calc_invalid_result">Некорректный результат вычисления</string>
+    <string name="error_calc_invalid_expression">Неверное выражение: %1$s</string>
+    <string name="error_calc_unknown">Произошла ошибка при вычислении</string>
 
 </resources>

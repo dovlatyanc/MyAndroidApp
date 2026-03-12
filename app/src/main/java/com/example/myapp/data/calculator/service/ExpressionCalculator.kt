@@ -1,6 +1,7 @@
 package com.example.myapp.data.calculator.service
 
 import com.example.myapp.domain.calculator.model.CalculationResult
+import com.example.myapp.domain.calculator.model.CalculationErrorCode
 import net.objecthunter.exp4j.ExpressionBuilder
 
 class ExpressionCalculator {
@@ -14,7 +15,7 @@ class ExpressionCalculator {
                 result.isNaN() || result.isInfinite() -> {
                     CalculationResult.Error(
                         expression = expression,
-                        message = "Некорректный результат вычисления"
+                        errorCode = CalculationErrorCode.INVALID_RESULT
                     )
                 }
                 else -> {
@@ -27,7 +28,8 @@ class ExpressionCalculator {
         } catch (e: Exception) {
             CalculationResult.Error(
                 expression = expression,
-                message = e.message ?: "Ошибка вычисления"
+                errorCode = CalculationErrorCode.INVALID_EXPRESSION,
+                originalException = e
             )
         }
     }

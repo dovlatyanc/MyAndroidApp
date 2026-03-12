@@ -5,6 +5,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.myapp.R
 import com.example.myapp.databinding.ActivityCalculatorBinding
+import com.example.myapp.presentation.calculator.utils.toUserMessage // 🔹 Добавьте этот импорт
 import com.example.myapp.presentation.calculator.viewmodel.CalculatorViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -45,18 +46,18 @@ class CalculatorActivity : AppCompatActivity() {
             }
 
             if (state.isError) {
-                Toast.makeText(
-                    this,
-                    state.errorMessage ?: "Ошибка вычисления",
-                    Toast.LENGTH_SHORT
-                ).show()
+                val errorMessage = state.errorCode?.toUserMessage(
+                    context = this,
+                    expression = state.errorExpression
+                ) ?: getString(R.string.error_calc_unknown)
+
+                Toast.makeText(this, errorMessage, Toast.LENGTH_SHORT).show()
                 viewModel.onErrorShown()
             }
         }
     }
 
     private fun setupClickListeners() {
-
         binding.btnZero.setOnClickListener { viewModel.onNumberClick(NUMBER_ZERO) }
         binding.btnOne.setOnClickListener { viewModel.onNumberClick(NUMBER_ONE) }
         binding.btnTwo.setOnClickListener { viewModel.onNumberClick(NUMBER_TWO) }
