@@ -14,31 +14,17 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.MyApp">
+        android:theme="@style/Theme.MyApp" >
         <activity
-            android:name=".presentation.main.ui.MainActivity"
-            android:exported="true">
+            android:name=".presentation.root.ui.RootActivity"
+            android:exported="true"
+            android:theme="@style/Theme.MyApp">
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity
-            android:name=".presentation.calculator.ui.CalculatorActivity"
-            android:exported="false"
-            android:parentActivityName=".presentation.main.ui.MainActivity" />
-        <activity
-            android:name=".presentation.weather.ui.WeatherActivity"
-            android:exported="false"
-            android:parentActivityName=".presentation.main.ui.MainActivity" />
-
-        <activity
-            android:name=".presentation.weather.ui.WeatherDetailActivity"
-            android:exported="false"
-            android:parentActivityName=".presentation.weather.ui.WeatherActivity" />
 
 
     </application>

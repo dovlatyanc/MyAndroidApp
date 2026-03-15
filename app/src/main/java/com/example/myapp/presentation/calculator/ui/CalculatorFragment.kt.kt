@@ -1,57 +1,45 @@
 package com.example.myapp.presentation.calculator.ui
 
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.appcompat.app.AppCompatActivity
 import com.example.myapp.R
-import com.example.myapp.databinding.ActivityCalculatorBinding
-import com.example.myapp.presentation.calculator.utils.toUserMessage // 🔹 Добавьте этот импорт
+import com.example.myapp.databinding.FragmentCalculatorBinding
+import com.example.myapp.presentation.calculator.utils.toUserMessage
 import com.example.myapp.presentation.calculator.viewmodel.CalculatorViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class CalculatorActivity : AppCompatActivity() {
-
-    private lateinit var binding: ActivityCalculatorBinding
+class CalculatorFragment : Fragment(R.layout.fragment_calculator) {
 
     private val viewModel: CalculatorViewModel by viewModel()
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        binding = ActivityCalculatorBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+    private var _binding: FragmentCalculatorBinding? = null
+    private val binding get() = _binding!!
 
-        setupToolbar()
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        _binding = FragmentCalculatorBinding.bind(view)
+
         setupObservers()
         setupClickListeners()
     }
 
-    private fun setupToolbar() {
-        setSupportActionBar(binding.toolbar)
-        supportActionBar?.apply {
-            setDisplayHomeAsUpEnabled(true)
-            setDisplayShowHomeEnabled(true)
-            title = getString(R.string.calculator)
-        }
-    }
-
-    override fun onSupportNavigateUp(): Boolean {
-        onBackPressedDispatcher.onBackPressed()
-        return true
-    }
 
     private fun setupObservers() {
-        viewModel.state.observe(this) { state ->
+
+        viewModel.state.observe(viewLifecycleOwner) { state ->
             binding.calcResult.text = state.expression.ifEmpty {
-                state.result ?: ""
+                state.result
             }
 
             if (state.isError) {
                 val errorMessage = state.errorCode?.toUserMessage(
-                    context = this,
-                    expression = state.errorExpression
+                    context = requireContext()
                 ) ?: getString(R.string.error_calc_unknown)
 
-                Toast.makeText(this, errorMessage, Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext(), errorMessage, Toast.LENGTH_SHORT).show()
                 viewModel.onErrorShown()
             }
         }
@@ -81,6 +69,11 @@ class CalculatorActivity : AppCompatActivity() {
         binding.btnClear.setOnClickListener { viewModel.onBackspaceClick() }
         binding.btnAC.setOnClickListener { viewModel.onClearClick() }
         binding.btnEquals.setOnClickListener { viewModel.onEqualsClick() }
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 
     companion object {

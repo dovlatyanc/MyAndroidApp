@@ -57,10 +57,11 @@ dependencies {
 
 
 
-    implementation("androidx.navigation:navigation-fragment-ktx:2.7.7")
-    implementation("androidx.navigation:navigation-ui-ktx:2.7.7")
+    implementation(libs.androidx.navigation.fragment.ktx.v297)
+    implementation(libs.androidx.navigation.ui.ktx)
     implementation(libs.androidx.activity.ktx.v180)
-    implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.2.0")
+    implementation(libs.androidx.swiperefreshlayout)
+    implementation(libs.koin.androidx.navigation)
     implementation(libs.koin.android)
     implementation(libs.exp4j)
     implementation(libs.glide)

@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".presentation.main.ui.MainActivity">
+    tools:context=".presentation.main.ui.MainFragment">
 
     <Button
         android:id="@+id/mainMenuButton"
@@ -19,16 +19,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/cameraButton"
-        android:layout_width="@dimen/_220dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/_100dp"
-        android:layout_marginTop="@dimen/_40dp"
-        android:text="@string/camera"
-        android:textSize="@dimen/_22sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mainMenuButton" />
+
 
     <Button
         android:id="@+id/openCalc"
@@ -40,23 +31,10 @@
         android:backgroundTint="@color/Green"
         android:textSize="@dimen/_22sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cameraButton"
+        app:layout_constraintTop_toBottomOf="@+id/mainMenuButton"
 
         />
 
-    <Button
-        android:id="@+id/btnCarsList"
-        android:layout_width="@dimen/_220dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/_100dp"
-        android:layout_marginTop="@dimen/_40dp"
-        android:backgroundTint="@color/Black"
-        android:text="@string/cars"
-        android:textSize="@dimen/_22sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/openCalc"
-
-        />
     <Button
         android:id="@+id/btnWeather"
         android:layout_width="@dimen/_220dp"
@@ -67,5 +45,5 @@
         android:text="@string/weather"
         android:textSize="@dimen/_22sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnCarsList" />
+        app:layout_constraintTop_toBottomOf="@+id/openCalc" />
 </androidx.constraintlayout.widget.ConstraintLayout>

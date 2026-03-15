@@ -18,26 +18,16 @@
             android:padding="@dimen/padding_large">
 
 
-            <androidx.appcompat.widget.Toolbar
-                android:id="@+id/toolbar"
-                android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
-                android:background="?attr/colorPrimary"
-                app:title="@string/weather_detail_title"
-                app:titleTextColor="@color/White"
-                app:navigationIcon="?attr/homeAsUpIndicator"
-                app:layout_constraintTop_toTopOf="parent" />
-
             <TextView
                 android:id="@+id/textCity"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/padding_normal"
+                android:textColor="@color/text_on_gradient"
                 android:textSize="@dimen/text_size_title"
                 android:textStyle="bold"
-                android:textColor="@color/text_on_gradient"
-                app:layout_constraintTop_toBottomOf="@id/toolbar"
+
                 app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
                 tools:text="Moscow, RU" />
 
             <TextView

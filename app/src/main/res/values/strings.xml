@@ -92,4 +92,15 @@
     <string name="error_calc_unknown">Произошла ошибка при вычислении</string>
     <string name="refresh_detail">Обновить</string>
 
+    <!-- Weather Detail Fragment -->
+
+    <string name="weather_error_title">Ошибка загрузки</string>
+    <string name="weather_error_temp">--</string>
+    <string name="weather_error_description">Не удалось получить данные</string>
+    <string name="weather_retry">Повторить</string>
+    <string name="weather_feels_like">Ощущается как: %.1f°C</string>
+    <string name="weather_temp_min_max">Мин/Макс: %.1f°C / %.1f°C</string>
+    <string name="weather_humidity">Влажность: %d%%</string>
+    <string name="weather_pressure">Давление: %d гПа</string>
+    <string name="weather_wind">Ветер: %.1f м/с</string>
 </resources>
