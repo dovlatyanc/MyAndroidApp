@@ -22,7 +22,9 @@ constraintlayout = "2.2.1"
 navigationFragmentKtx = "2.9.7"
 navVersion = "2.7.7"
 retrofit = "3.0.0"
+roomVersion = "2.6.1"
 swiperefreshlayout = "1.2.0"
+ksp = "1.9.22-1.0.17"
 
 [libraries]
 androidx-activity-activity-ktx3 = { module = "androidx.activity:activity-ktx", version.ref = "activity" }
@@ -33,6 +35,9 @@ androidx-lifecycle-lifecycle-livedata-ktx = { module = "androidx.lifecycle:lifec
 androidx-lifecycle-lifecycle-viewmodel-ktx = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "androidxLifecycleViewmodelKtx" }
 androidx-navigation-fragment-ktx-v297 = { module = "androidx.navigation:navigation-fragment-ktx", version.ref = "navigationFragmentKtx" }
 androidx-navigation-ui-ktx = { module = "androidx.navigation:navigation-ui-ktx", version.ref = "navVersion" }
+androidx-room-ktx = { module = "androidx.room:room-ktx", version.ref = "roomVersion" }
+androidx-room-compiler = { module = "androidx.room:room-compiler", version.ref = "roomVersion" }
+androidx-room-runtime = { module = "androidx.room:room-runtime", version.ref = "roomVersion" }
 androidx-swiperefreshlayout = { module = "androidx.swiperefreshlayout:swiperefreshlayout", version.ref = "swiperefreshlayout" }
 compiler = { module = "com.github.bumptech.glide:compiler", version.ref = "glide" }
 compiler-v4160 = { module = "com.github.bumptech.glide:compiler", version.ref = "compiler" }
@@ -56,4 +61,4 @@ retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
-
+devtoolsKsp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
