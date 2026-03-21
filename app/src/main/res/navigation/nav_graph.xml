@@ -4,21 +4,36 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/mainFragment">
+    app:startDestination="@id/authFragment">
+
 
     <fragment
-        android:id="@+id/mainFragment"
-        android:name="com.example.myapp.presentation.main.ui.MainFragment"
-        android:label="@string/mainmenu"
-        tools:layout="@layout/fragment_main">
+        android:id="@+id/authFragment"
+        android:name="com.example.myapp.presentation.auth.ui.AuthFragment"
+        android:label="@string/auth_title"
+        tools:layout="@layout/fragment_auth">
 
         <action
-            android:id="@+id/action_main_to_weather"
-            app:destination="@id/weatherFragment" />
+            android:id="@+id/action_auth_to_register"
+            app:destination="@id/registerFragment" />
         <action
-            android:id="@+id/action_main_to_calculator"
-            app:destination="@id/calculatorFragment" />
+            android:id="@+id/action_auth_to_main"
+            app:destination="@id/weatherFragment"
+            app:popUpTo="@id/authFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
 
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.example.myapp.presentation.auth.ui.RegisterFragment"
+        android:label="@string/register_title"
+        tools:layout="@layout/fragment_register">
+
+        <action
+            android:id="@+id/action_register_to_auth"
+            app:destination="@id/authFragment"
+            app:popUpTo="@id/registerFragment"
+            app:popUpToInclusive="true" />
     </fragment>
 
     <fragment
@@ -31,7 +46,6 @@
             android:name="city"
             app:argType="string"
             android:defaultValue="Moscow" />
-
         <action
             android:id="@+id/action_weather_to_detail"
             app:destination="@id/weatherDetailFragment" />
@@ -42,7 +56,6 @@
         android:name="com.example.myapp.presentation.weather.ui.WeatherDetailFragment"
         android:label="@string/weather_detail_title"
         tools:layout="@layout/fragment_weather_detail">
-
         <argument
             android:name="forecast"
             app:argType="com.example.myapp.domain.weather.model.WeatherForecast"

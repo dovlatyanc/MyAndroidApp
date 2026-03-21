@@ -9,12 +9,13 @@
     <string name="screen_main">Главная</string>
     <string name="screen_details">Детали авто</string>
 
+
     <string name="calculator">Calculator</string>
     <string name="calculator_title">Калькулятор</string>
     <string name="ac">AC</string>
     <string name="Percent">%</string>
     <string name="Zero">0</string>
-    <string name="Backspace"><![CDATA[⌫]]></string>
+    <string name="Backspace">⌫</string>
     <string name="divide">/</string>
     <string name="seven">7</string>
     <string name="eight">8</string>
@@ -30,8 +31,12 @@
     <string name="plus">+</string>
     <string name="equals">=</string>
     <string name="dot">.</string>
+    <string name="reverse">+/-</string>
     <string name="error_invalid_expression">Неверное выражение</string>
     <string name="error_calculation">Ошибка вычисления</string>
+    <string name="error_calc_invalid_result">Некорректный результат вычисления</string>
+    <string name="error_calc_invalid_expression">Неверное выражение: %1$s</string>
+    <string name="error_calc_unknown">Произошла ошибка при вычислении</string>
 
 
     <string name="weather">Погода</string>
@@ -50,50 +55,22 @@
     <string name="wind_format">Ветер: %.1f м/с</string>
     <string name="city_hint">Введите название города</string>
     <string name="refresh">Обновить</string>
-
-
-    <string name="label_brand">Марка:</string>
-    <string name="label_model">Модель:</string>
-    <string name="label_year">Год:</string>
-    <string name="label_price">Цена:</string>
-    <string name="label_description">Описание:</string>
-    <string name="currency_symbol">₽</string>
-
-    <string name="error_network">Ошибка сети</string>
-    <string name="error_server">Ошибка сервера</string>
-    <string name="error_unknown">Неизвестная ошибка</string>
-    <string name="error_no_internet">Нет подключения к интернету</string>
-    <string name="error_city_not_found">Город не найден</string>
-
-
-    <string name="button_retry">Повторить</string>
-    <string name="button_cancel">Отмена</string>
-    <string name="button_ok">OK</string>
-    <string name="button_back">Назад</string>
-
-    <string name="unit_celsius">°C</string>
-    <string name="unit_percent">%%</string>
-    <string name="unit_meter_per_second">м/с</string>
-
-
+    <string name="weather_city">Город:</string>
+    <string name="weather_temperature">Температура:</string>
+    <string name="weather_description">Описание:</string>
+    <string name="weather_min_max">Мин/Макс:</string>
+    <string name="weather_loading">Загрузка прогноза…</string>
+    <string name="weather_error_load">Не удалось загрузить прогноз</string>
+    <string name="weather_error_network">Проверьте подключение к интернету</string>
+    <string name="weather_updated">Обновлено: %s</string>
     <string name="weather_clear">Ясно</string>
     <string name="weather_clouds">Облачно</string>
     <string name="weather_rain">Дождь</string>
     <string name="weather_snow">Снег</string>
     <string name="weather_thunderstorm">Гроза</string>
     <string name="weather_mist">Туман</string>
-    <string name="reverse">+|-</string>
-
     <string name="err_weather_ui">Ошибка: %1$s</string>
-
-    <!-- Ошибки калькулятора -->
-    <string name="error_calc_invalid_result">Некорректный результат вычисления</string>
-    <string name="error_calc_invalid_expression">Неверное выражение: %1$s</string>
-    <string name="error_calc_unknown">Произошла ошибка при вычислении</string>
     <string name="refresh_detail">Обновить</string>
-
-    <!-- Weather Detail Fragment -->
-
     <string name="weather_error_title">Ошибка загрузки</string>
     <string name="weather_error_temp">--</string>
     <string name="weather_error_description">Не удалось получить данные</string>
@@ -103,4 +80,65 @@
     <string name="weather_humidity">Влажность: %d%%</string>
     <string name="weather_pressure">Давление: %d гПа</string>
     <string name="weather_wind">Ветер: %.1f м/с</string>
+
+    <string name="error">Ошибка</string>
+    <string name="retry">Повторить</string>
+    <string name="cancel">Отмена</string>
+    <string name="button_retry">Повторить</string>
+    <string name="button_cancel">Отмена</string>
+    <string name="button_ok">OK</string>
+    <string name="button_back">Назад</string>
+    <string name="save">Сохранить</string>
+    <string name="delete">Удалить</string>
+    <string name="edit">Редактировать</string>
+    <string name="back">Назад</string>
+    <string name="next">Далее</string>
+    <string name="done">Готово</string>
+
+
+    <string name="weather_bottom">Погода</string>
+    <string name="calculator_bottom">Калькулятор</string>
+
+    <string name="auth_title">Вход в приложение</string>
+    <string name="auth_login_hint">Логин</string>
+    <string name="auth_password_hint">Пароль</string>
+    <string name="auth_login_button">Войти</string>
+    <string name="auth_register_button">Нет аккаунта? Зарегистрироваться</string>
+    <string name="auth_error_empty_fields">Заполните все поля</string>
+    <string name="auth_error_invalid_credentials">Неверный логин или пароль</string>
+    <string name="auth_error_login_exists">Такой логин уже занят</string>
+    <string name="auth_error_weak_password">Пароль должен содержать минимум 6 символов</string>
+    <string name="auth_error_registration_failed">Не удалось зарегистрировать пользователя</string>
+    <string name="auth_error_unknown">Произошла неизвестная ошибка</string>
+    <string name="auth_success_default">Вход выполнен</string>
+
+    <string name="register_title">Регистрация</string>
+    <string name="register_login_hint">Придумайте логин</string>
+    <string name="register_email_hint">Email (необязательно)</string>
+    <string name="register_password_hint">Придумайте пароль</string>
+    <string name="register_password_hint_text">Минимум 6 символов</string>
+    <string name="register_button">Зарегистрироваться</string>
+    <string name="register_back_to_login">Уже есть аккаунт? Войти</string>
+    <string name="register_success">Регистрация успешна! Войдите.</string>
+
+
+    <string name="error_network">Ошибка сети</string>
+    <string name="error_server">Ошибка сервера</string>
+    <string name="error_unknown">Неизвестная ошибка</string>
+    <string name="error_no_internet">Нет подключения к интернету</string>
+    <string name="error_city_not_found">Город не найден</string>
+
+
+    <string name="unit_celsius">°C</string>
+    <string name="unit_percent">%</string>
+    <string name="unit_meter_per_second">м/с</string>
+
+
+    <string name="settings_title">Настройки</string>
+    <string name="settings_theme">Тема</string>
+    <string name="settings_language">Язык</string>
+    <string name="settings_logout">Выйти</string>
+    <string name="settings_confirm_logout">Вы действительно хотите выйти?</string>
+    <string name="weather_menu">🌤 Погода</string>
+    <string name="calc_menu">🧮 Калькулятор</string>
 </resources>

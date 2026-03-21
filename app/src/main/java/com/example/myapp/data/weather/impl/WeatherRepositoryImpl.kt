@@ -1,4 +1,4 @@
-package com.example.myapp.data.repository
+package com.example.myapp.data.weather.impl
 
 import com.example.myapp.data.weather.remote.WeatherRemoteDataSource
 import com.example.myapp.domain.weather.model.WeatherForecast
@@ -10,10 +10,14 @@ class WeatherRepositoryImpl(
 
     override suspend fun getWeatherForecast(city: String): Result<List<WeatherForecast>> {
         return try {
-            val response = remoteDataSource.getForecast(city)
+            val response = remoteDataSource.getForecast(
+                city = city,
+                cnt = 56 // Запрашиваем ровно 56 записей, чтобы получить 7 дневных прогнозов
+            )
+
+            // Берем каждую 8-ю запись (по одной на день)
             val forecast = response.list
                 .filterIndexed { index, _ -> index % 8 == 0 }
-                .take(7)
                 .map { item ->
                     WeatherForecast(
                         date = item.dataTxt.substring(0, 10),
@@ -32,6 +36,7 @@ class WeatherRepositoryImpl(
                         timezone = response.city.timezone
                     )
                 }
+
             Result.success(forecast)
         } catch (e: Exception) {
             Result.failure(e)

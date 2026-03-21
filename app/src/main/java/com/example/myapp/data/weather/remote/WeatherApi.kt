@@ -10,6 +10,6 @@ interface WeatherApi {
         @Query("q") city: String,
         @Query("appid") apiKey: String,
         @Query("units") units: String = "metric",
-        @Query("cnt") count: Int = 40 //
+        @Query("cnt") cnt: Int = 40
     ): WeatherResponse
 }

@@ -1,22 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <dimen name="_22sp">22sp</dimen>
-    <dimen name="_40dp">40dp</dimen>
-    <dimen name="_32dp">32dp</dimen>
-    <dimen name="_100dp">100dp</dimen>
-    <dimen name="_90dp">90dp</dimen>
-    <dimen name="_80dp">80dp</dimen>
+    <dimen name="_0dp">0dp</dimen>
     <dimen name="_4dp">4dp</dimen>
     <dimen name="_8dp">8dp</dimen>
-    <dimen name="_20sp">20sp</dimen>
-    <dimen name="_150dp">150dp</dimen>
     <dimen name="_20dp">20dp</dimen>
-    <dimen name="_220dp">220dp</dimen>
+    <dimen name="_32dp">32dp</dimen>
+    <dimen name="_40dp">40dp</dimen>
+    <dimen name="_50dp">50dp</dimen>
+    <dimen name="_60dp">60dp</dimen>
     <dimen name="_64dp">64dp</dimen>
-    <dimen name="_0dp">0dp</dimen>
     <dimen name="_76dp">76dp</dimen>
+    <dimen name="_80dp">80dp</dimen>
+    <dimen name="_90dp">90dp</dimen>
+    <dimen name="_100dp">100dp</dimen>
+    <dimen name="_120dp">120dp</dimen>
+    <dimen name="_150dp">150dp</dimen>
+    <dimen name="_200dp">200dp</dimen>
+    <dimen name="_220dp">220dp</dimen>
+    <dimen name="_250dp">250dp</dimen>
+    <dimen name="_300dp">300dp</dimen>
+
+
+    <dimen name="_12sp">12sp</dimen>
+    <dimen name="_14sp">14sp</dimen>
+    <dimen name="_16sp">16sp</dimen>
+    <dimen name="_18sp">18sp</dimen>
+    <dimen name="_20sp">20sp</dimen>
+    <dimen name="_22sp">22sp</dimen>
+    <dimen name="_24sp">24sp</dimen>
+    <dimen name="_28sp">28sp</dimen>
+    <dimen name="_32sp">32sp</dimen>
     <dimen name="_60sp">60sp</dimen>
+
 
     <dimen name="text_size_extra_large">48sp</dimen>
     <dimen name="text_size_title">20sp</dimen>
@@ -24,12 +40,15 @@
     <dimen name="text_size_price">18sp</dimen>
     <dimen name="text_size_small">12sp</dimen>
 
+
     <dimen name="padding_small">8dp</dimen>
     <dimen name="padding_normal">16dp</dimen>
     <dimen name="padding_large">24dp</dimen>
 
-    <dimen name="image_height">120dp</dimen>
-    <dimen name="corner_radius">8dp</dimen>
+    <dimen name="margin_small">8dp</dimen>
+    <dimen name="margin_medium">16dp</dimen>
+    <dimen name="margin_large">24dp</dimen>
+
 
     <dimen name="calculator_button_size">80dp</dimen>
     <dimen name="calculator_button_margin">4dp</dimen>
@@ -43,29 +62,17 @@
     <dimen name="weather_detail_size">16sp</dimen>
     <dimen name="weather_search_bar_height">56dp</dimen>
 
-    <dimen name="margin_small">8dp</dimen>
-    <dimen name="margin_medium">16dp</dimen>
-    <dimen name="margin_large">24dp</dimen>
 
     <dimen name="list_item_height">72dp</dimen>
     <dimen name="list_item_image_size">56dp</dimen>
     <dimen name="divider_height">1dp</dimen>
 
+    <dimen name="image_height">120dp</dimen>
+    <dimen name="corner_radius">8dp</dimen>
+
 
     <dimen name="icon_size_small">24dp</dimen>
     <dimen name="icon_size_medium">32dp</dimen>
     <dimen name="icon_size_large">48dp</dimen>
-    <dimen name="_60dp">60dp</dimen>
-    <dimen name="_50dp">50dp</dimen>
-    <dimen name="_120dp">120dp</dimen>
-    <dimen name="_200dp">200dp</dimen>
-    <dimen name="_250dp">250dp</dimen>
-    <dimen name="_300dp">300dp</dimen>
-    <dimen name="_12sp">12sp</dimen>
-    <dimen name="_14sp">14sp</dimen>
-    <dimen name="_16sp">16sp</dimen>
-    <dimen name="_18sp">18sp</dimen>
-    <dimen name="_24sp">24sp</dimen>
-    <dimen name="_28sp">28sp</dimen>
-    <dimen name="_32sp">32sp</dimen>
+
 </resources>

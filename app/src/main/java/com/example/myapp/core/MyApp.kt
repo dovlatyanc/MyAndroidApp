@@ -1,6 +1,7 @@
 package com.example.myapp.core
 
 import android.app.Application
+import com.example.myapp.core.di.auth.authModule
 import com.example.myapp.core.di.calculator.calculatorDataModule
 import com.example.myapp.core.di.calculator.calculatorPresentationModule
 import com.example.myapp.core.di.weather.dataModule
@@ -28,6 +29,7 @@ class MyApp : Application() {
                 weatherPresentationModule,
                 calculatorDataModule,
                 calculatorPresentationModule,
+                authModule
 
             )
         }

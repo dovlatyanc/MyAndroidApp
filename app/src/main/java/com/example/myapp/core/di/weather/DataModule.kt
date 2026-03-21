@@ -1,6 +1,6 @@
 package com.example.myapp.core.di.weather
 
-import com.example.myapp.data.repository.WeatherRepositoryImpl
+import com.example.myapp.data.weather.impl.WeatherRepositoryImpl
 import com.example.myapp.data.weather.remote.RetrofitClient
 import com.example.myapp.data.weather.remote.WeatherApi
 import com.example.myapp.data.weather.remote.WeatherRemoteDataSource

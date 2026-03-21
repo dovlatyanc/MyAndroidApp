@@ -1,18 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
         <color name="Black">#FF000000</color>
         <color name="White">#FFFFFFFF</color>
         <color name="Gray">#A5A5A5</color>
         <color name="orange">#FF9F0A</color>
         <color name="Pink">#FF5788</color>
         <color name="Green">#4CAF50</color>
+        <color name="blue">#00BFFF</color>
+
 
         <color name="gray_light">#F5F5F5</color>
         <color name="gray_text">#757575</color>
-        <color name="price_color">#2E7D32</color>
+
         <color name="purple_500">#6200EE</color>
         <color name="purple_700">#3700B3</color>
-        <color name="blue">#00BFFF</color>
+
+
+        <color name="price_color">#2E7D32</color>
+
 
         <color name="weather_sunny_start">#FFB74D</color>
         <color name="weather_sunny_end">#FFA726</color>
@@ -29,11 +35,7 @@
         <color name="weather_storm_start">#5C6BC0</color>
         <color name="weather_storm_end">#3949AB</color>
 
+
         <color name="text_on_gradient">#FFFFFF</color>
         <color name="text_secondary">#B0BEC5</color>
-
-      >
-
-
-
 </resources>
