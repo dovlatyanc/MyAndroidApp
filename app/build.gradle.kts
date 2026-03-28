@@ -1,8 +1,15 @@
 plugins {
     alias(libs.plugins.android.application)
+    id("androidx.navigation.safeargs.kotlin")
 }
 
 android {
+
+
+    buildFeatures {
+        viewBinding = true
+        buildConfig = true
+    }
     namespace = "com.example.myapp"
     compileSdk {
         version = release(36) {
@@ -21,8 +28,17 @@ android {
     }
 
     buildTypes {
+
+
+        val apiKey = project.findProperty("WEATHER_API_KEY") as? String ?: ""
+
+        debug {
+
+            buildConfigField("String", "WEATHER_API_KEY", "\"$apiKey\"")
+        }
         release {
-            isMinifyEnabled = false
+            buildConfigField("String", "WEATHER_API_KEY", "\"$apiKey\"")
+            isMinifyEnabled = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
@@ -35,7 +51,27 @@ android {
     }
 }
 
+
+
 dependencies {
+
+
+
+    implementation("androidx.navigation:navigation-fragment-ktx:2.7.7")
+    implementation("androidx.navigation:navigation-ui-ktx:2.7.7")
+    implementation(libs.androidx.activity.ktx.v180)
+    implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.2.0")
+    implementation(libs.koin.android)
+    implementation(libs.exp4j)
+    implementation(libs.glide)
+    annotationProcessor(libs.compiler)
+    implementation(libs.androidx.lifecycle.lifecycle.viewmodel.ktx)
+    implementation(libs.androidx.lifecycle.lifecycle.livedata.ktx)
+    implementation(libs.androidx.activity.activity.ktx3)
+    implementation(libs.kotlinx.coroutines.android)
+    implementation(libs.retrofit)
+    implementation(libs.converter.gson)
+    implementation(libs.logging.interceptor)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
